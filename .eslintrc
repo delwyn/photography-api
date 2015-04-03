@@ -1,0 +1,10 @@
+env:
+  node: true
+
+settings:
+  ecmascript: 6
+  jsx: true
+
+rules:
+  quotes: [2, "single"]
+  no-multi-spaces: false

@@ -15,14 +15,14 @@ var router      = require('koa-router');
 var app  = module.exports = koa();
 
 app.use(conditional());
-app.use(cors())
+app.use(cors());
 app.use(etag());
 app.use(json());
 app.use(compressor());
 app.use(router(app));
 
 if (env === 'development') {
-  app.use(require('koa-logger')())
+  app.use(require('koa-logger')());
 }
 
 require('./app/routes');

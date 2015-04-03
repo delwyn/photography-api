@@ -1,6 +1,6 @@
 'use strict';
 
-var app      = require('../server')
+var app      = require('../server');
 var photos   = require('./controllers/photos');
 var lines    = require('./controllers/lines');
 var stations = require('./controllers/stations');
