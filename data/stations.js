@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = [{
   name: "Acton Town",
   lineIds: [4,10]

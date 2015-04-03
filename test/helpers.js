@@ -1,3 +1,5 @@
+'use strict';
+
 var setup = module.exports = {};
 
 var db = require('../app/db');

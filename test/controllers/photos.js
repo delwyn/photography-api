@@ -1,3 +1,5 @@
+'use strict';
+
 var app     = require('../../server.js');
 var request = require('co-supertest').agent(app.listen());
 var expect  = require('chai').expect;
