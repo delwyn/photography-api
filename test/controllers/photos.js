@@ -1,18 +1,20 @@
-'use strict';
+'use strict'
 
-var app     = require('../../server.js');
-var request = require('co-supertest').agent(app.listen());
-var expect  = require('chai').expect;
-var helpers = require('../helpers');
+const app     = require('../../server.js')
+const request = require('co-supertest').agent(app.listen())
+const expect  = require('chai').expect
+const helpers = require('../helpers')
 
-describe('GET /api/photos', function () {
-  beforeEach(helpers.resetDB);
+describe('Photos', function () {
+  describe('GET /api/v1/photos', function () {
+    beforeEach(helpers.resetDB)
 
-  it('should return a list of photos', function *() {
-    var res = yield request.get('/api/photos').expect(200).end();
-    var photos = res.body.photos;
+    it('should return a list of photos', function* () {
+      const res = yield request.get('/api/v1/photos').expect(200).end()
+      const photos = res.body.photos
 
-    expect(photos).to.be.a('array');
-    expect(photos[0]).to.be.a('object');
-  });
-});
+      expect(photos).to.be.a('array')
+      expect(photos[0]).to.be.a('object')
+    })
+  })
+})

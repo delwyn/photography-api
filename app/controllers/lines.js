@@ -1,16 +1,10 @@
-'use strict';
+'use strict'
 
-var db = require('../db');
-var lines = db.get('lines');
+const db = require('../db')
+const Line = db.get('lines')
 
-exports.index = function *(next) {
-  var self = this;
-
-  yield lines.find({}, {}, function(err, lines) {
-    self.body = {
-      lines: lines
-    };
-  });
-
-  yield next;
-};
+exports.index = function* () {
+  this.body = {
+    lines: yield Line.find()
+  }
+}

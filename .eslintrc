@@ -1,10 +1,17 @@
-env:
-  node: true
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "mongo": true
+  },
+  "rules": {
+    "quotes": [ 2, "single" ],
+    "no-multi-spaces": [ 2, {
+      "exceptions": { "VariableDeclarator": true }
+    }]
+  },
+  "globals": {
 
-settings:
-  ecmascript: 6
-  jsx: true
-
-rules:
-  quotes: [2, "single"]
-  no-multi-spaces: false
+  }
+}

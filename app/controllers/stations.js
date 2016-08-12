@@ -1,16 +1,10 @@
-'use strict';
+'use strict'
 
-var db = require('../db');
-var stations = db.get('stations');
+const db = require('../db')
+const Station = db.get('stations')
 
-exports.index = function *(next) {
-  var self = this;
-
-  yield stations.find({}, {}, function(err, stations) {
-    self.body = {
-      stations: stations
-    };
-  });
-
-  yield next;
-};
+exports.index = function* () {
+  this.body = {
+    stations: yield Station.find()
+  }
+}

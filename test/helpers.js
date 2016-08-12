@@ -1,21 +1,21 @@
-'use strict';
+'use strict'
 
-var setup = module.exports = {};
+const setup = module.exports = {}
 
-var db = require('../app/db');
-var fixtures = require('./fixtures');
+const db = require('../app/db')
+const fixtures = require('./fixtures')
 
-var models = ['photos', 'stations', 'lines'];
+const models = ['photos', 'stations', 'lines']
 
 function* loadFixtures(model) {
-  var collection = db.get(model);
+  const collection = db.get(model)
 
-  yield collection.remove();
-  yield collection.insert(fixtures[model]);
+  yield collection.remove()
+  yield collection.insert(fixtures[model])
 }
 
 setup.resetDB = function* () {
-  for (var i = 0; i < models.length; i++) {
-    yield* loadFixtures(models[i]);
+  for (let i = 0; i < models.length; i++) {
+    yield* loadFixtures(models[i])
   }
 }
